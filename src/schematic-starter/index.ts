@@ -27,22 +27,22 @@ export function schematicStarter(_options: AddFilesInterface): Rule {
 
   return (tree: Tree, context: SchematicContext) => {
     // todo: add a check for a missing name property
-    if (!_options.name) {
-      throw new SchematicsException("Entity name is required");
-    }
-    const path = `./src/app/components`;
+    // if (!_options.name) {
+    //   throw new SchematicsException("Entity name is required");
+    // }
+    // const path = `./src/app/components`;
 
-    // todo: add debug statement
-    context.logger.debug(`adding files to ${path} dir`);
-    // todo: use the getBase64Image function and override the browserType property on the _options object
-    _options.browserType = getBase64Image(_options.browserType);
-    // todo: apply template and move rules to the source files
-    return apply(url("./files"), [
-      template({
-        ...strings,
-        ..._options
-      }),
-      move(path)
-    ])(context);
+    // // todo: add debug statement
+    // context.logger.debug(`adding files to ${path} dir`);
+    // // todo: use the getBase64Image function and override the browserType property on the _options object
+    // _options.browserType = getBase64Image(_options.browserType);
+    // // todo: apply template and move rules to the source files
+    // return apply(url("./files"), [
+    //   template({
+    //     ...strings,
+    //     ..._options
+    //   }),
+    //   move(path)
+    // ])(context);
   };
 }
